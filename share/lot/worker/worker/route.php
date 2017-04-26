@@ -14,10 +14,12 @@ Route::set($state['path'] . '%s%', function($id = "") use($site, $state, $url) {
     ])) {
         Shield::abort(); // Page does not exist
     }
-    $f = PAGE . DS . $path . DS . 'share.data';
-    $i = e(File::open($f)->read([]));
-    $i[$id] = (isset($i[$id]) ? $i[$id] : 0) + 1;
-    File::write(To::json($i))->saveTo($f, 0600);
+    if ($state['counter']) {
+        $f = PAGE . DS . $path . DS . 'share.data';
+        $i = e(File::open($f)->read([]));
+        $i[$id] = (isset($i[$id]) ? $i[$id] : 0) + 1;
+        File::write(To::json($i))->saveTo($f, 0600);
+    }
     $page = Page::open($page)->get([
         'title' => $site->title,
         'description' => $site->description,
