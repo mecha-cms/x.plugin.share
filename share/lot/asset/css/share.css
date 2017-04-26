@@ -1,6 +1,7 @@
 .share {
   display:block;
   position:relative;
+  text-align:left;
 }
 .share:after {
   content:"";
@@ -12,13 +13,14 @@
   float:left;
   margin:0 2px 2px 0;
   background:rgba(0,0,0,.05);
-  color:#000;
+  color:#000 !important;
   border:1px solid;
   font:inherit;
   font-weight:normal;
   font-style:normal;
   line-height:1.5;
   color:inherit;
+  text-align:center;
   text-decoration:none;
   text-shadow:none;
   padding:.25em .75em;
@@ -44,7 +46,7 @@
 .share-color a {
   background:#bada55;
   border-color:transparent;
-  color:#fff;
+  color:#fff !important;
 }
 .share-color svg {fill:#fff}
 .share-color .to\:facebook {background:#3b5998}

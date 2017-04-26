@@ -26,11 +26,14 @@ Route::set($state['path'] . '%s%', function($id = "") use($site, $state, $url) {
         'url' => $url . ""
     ]);
     foreach ($page as &$v) {
-        $v = urlencode($v);
+        $v = From::url(To::text($v));
     }
     unset($v);
-    if ($id === 'e-mail') {
-        HTTP::header('Location', 'mailto:' . __replace__($a['e-mail']['url'], $page));
+    if (isset($a['fn']) && is_callable($a['fn'])) {
+        $page = call_user_func($a['fn'], $page);
+    }
+    if ($id === 'e-mail' || $id === 'whats-app') {
+        HTTP::header('Location', __replace__($a[$id]['url'], $page));
         exit;
     }
     Guardian::kick(__replace__($a[$id]['url'], $page));
