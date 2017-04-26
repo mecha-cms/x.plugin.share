@@ -1,0 +1,34 @@
+---
+title: Share
+description: Social sharing buttons.
+author: Taufik Nurrohman
+type: Markdown
+version: 2.0.0
+...
+
+Add this snippet to the `page.php` file, usually just before the `<footer>` tag:
+
+~~~ .php
+<?php Shield::get('share'); ?>
+~~~
+
+Open `lot\extend\plugin\lot\worker\share\lot\state\config.php` to configure:
+
+~~~ .php
+[
+    'path' => 'share/to:',
+    'counter' => true, // Enable sharing counter?
+    'list' => ['facebook', 'twitter', 'google'],
+    'style' => ['color'] // Modify the social sharing button(s) appearance
+]
+~~~
+
+### Modifier
+
+Modifier for the `style` property:
+
+ - `color`
+ - `icon`
+ - `round`
+
+<!-- block:donate -->
