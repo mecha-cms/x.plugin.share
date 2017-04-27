@@ -26,7 +26,7 @@ Route::set($state['path'] . '%s%', function($id = "") use($site, $state, $url) {
         'url' => $url . ""
     ]);
     foreach ($page as &$v) {
-        $v = From::url(To::text($v));
+        $v = From::url(trim(strip_tags($v)));
     }
     unset($v);
     if (isset($a[$id]['fn']) && is_callable($a[$id]['fn'])) {
