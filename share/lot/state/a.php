@@ -14,7 +14,9 @@ return [
         'target' => '_blank',
         'fn' => function($lot) {
             // Maximum character(s) is 140
-            $lot['description'] = substr($lot['description'], 0, 140 - strlen($lot['url']) - 1);
+            $s = substr($lot['description'], 0, 140);
+            // Minus the URL and a space
+            $lot['description'] = substr($s, 0, 140 - strlen($lot['url']) - 1);
             return $lot;
         }
     ],

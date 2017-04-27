@@ -29,8 +29,8 @@ Route::set($state['path'] . '%s%', function($id = "") use($site, $state, $url) {
         $v = From::url(To::text($v));
     }
     unset($v);
-    if (isset($a['fn']) && is_callable($a['fn'])) {
-        $page = call_user_func($a['fn'], $page);
+    if (isset($a[$id]['fn']) && is_callable($a[$id]['fn'])) {
+        $page = call_user_func($a[$id]['fn'], $page);
     }
     if ($id === 'e-mail' || $id === 'whats-app') {
         HTTP::header('Location', __replace__($a[$id]['url'], $page));
