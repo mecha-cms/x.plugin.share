@@ -25,7 +25,7 @@ Route::set($state['path'] . '%s%', function($id = "") use($site, $state, $url) {
         'description' => $site->description,
         'url' => $url . ""
     ]);
-    foreach ($page as &$v) trim(strip_tags($v)));
+    foreach ($page as &$v) trim(strip_tags($v));
     if (isset($a[$id]['fn']) && is_callable($a[$id]['fn'])) {
         $page = call_user_func($a[$id]['fn'], $page);
     }
