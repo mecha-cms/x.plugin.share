@@ -7,13 +7,10 @@ Route::set($state['path'] . '%s%', function($id = "") use($site, $state, $url) {
     if (!isset($a[$id]['url'])) {
         Shield::abort(); // Service does not exist
     }
-    $path = Request::get('path');
-    if (!$path || !$page = File::exist([
+    $path = Request::get('path', $site->path);
+    if (!$page = File::exist([
         PAGE . DS . $path . '.page',
-        PAGE . DS . $path . '.archive',
-        // Home page
-        PAGE . DS . $site->path . '.page',
-        PAGE . DS . $site->path . '.archive'
+        PAGE . DS . $path . '.archive'
     ])) {
         Shield::abort(); // Page does not exist
     }
