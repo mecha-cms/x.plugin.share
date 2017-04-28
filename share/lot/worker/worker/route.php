@@ -25,16 +25,16 @@ Route::set($state['path'] . '%s%', function($id = "") use($site, $state, $url) {
         'description' => $site->description,
         'url' => $url . ""
     ]);
-    foreach ($page as &$v) {
-        $v = From::url(trim(strip_tags($v)));
-    }
-    unset($v);
+    foreach ($page as &$v) trim(strip_tags($v)));
     if (isset($a[$id]['fn']) && is_callable($a[$id]['fn'])) {
         $page = call_user_func($a[$id]['fn'], $page);
     }
+    foreach ($page as &$v) urlencode($v);
+    unset($v);
+    $v = __replace__($a[$id]['url'], $page);
     if ($id === 'e-mail' || $id === 'whats-app') {
-        HTTP::header('Location', __replace__($a[$id]['url'], $page));
+        HTTP::header('Location', $v);
         exit;
     }
-    Guardian::kick(__replace__($a[$id]['url'], $page));
+    Guardian::kick($v);
 });
