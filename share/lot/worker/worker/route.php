@@ -33,7 +33,6 @@ Route::set($state['path'] . '%s%', function($id = "") use($site, $state, $url) {
         $page = call_user_func($a[$id]['fn'], $page);
     }
     foreach ($page as &$v) $v = urlencode($v);
-    unset($v);
     $v = __replace__($a[$id]['url'], $page);
     if ($id === 'e-mail' || $id === 'whats-app') {
         HTTP::header('Location', $v);
