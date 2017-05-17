@@ -39,7 +39,7 @@
   width:1.25em;
   height:1.25em;
   margin-left:-.25em;
-  fill:#000;
+  fill:currentColor;
 }
 
 /* @color */
@@ -48,7 +48,6 @@
   border-color:transparent;
   color:#fff !important;
 }
-.share-color svg {fill:#fff}
 .share-color .to\:facebook {background:#3b5998}
 .share-color .to\:twitter {background:#55acee}
 .share-color .to\:google {background:#dd4b39}
