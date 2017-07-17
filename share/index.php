@@ -3,7 +3,7 @@
 Asset::set(__DIR__ . DS . 'lot' . DS . 'asset' . DS . 'css' . DS . 'share.min.css');
 
 function fn_share_path($path, $id) {
-    if ($id === 'share' && !$path) {
+    if (is_string($id) && $id === 'share' && !$path) {
         return __DIR__ . DS . 'lot' . DS . 'worker' . DS . 'share.php';
     }
     return $path;
