@@ -4,7 +4,7 @@ description: Social sharing buttons.
 author: Taufik Nurrohman
 type: Markdown
 version: 2.0.6
-dependency: {"extension":["page"]}
+dependency: {"extension":["asset","page"]}
 ...
 
 Add this snippet to the `page.php` file, usually just before the `</article>` tag:
