@@ -3,27 +3,27 @@ title: Share
 description: Social sharing buttons.
 author: Taufik Nurrohman
 type: Markdown
-version: 2.0.6
+version: 2.1.0
 
-dependency:
-  extension:
-    - asset
-    - page
+lot:
+  extend:
+    asset: 1
+    page: 1
+    shield: 1
 ...
 
 Add this snippet to the `page.php` file, usually just before the `</article>` tag:
 
 ~~~ .php
-<?php Shield::get('share'); ?>
+<p><?php static::share(); ?></p>
 ~~~
 
-Open `lot\extend\plugin\lot\worker\share\lot\state\config.php` to configure:
+Open `.\lot\extend\plugin\lot\share\lot\state\config.php` to configure:
 
 ~~~ .php
 [
-    'path' => 'share/to:',
     'counter' => true, // Enable sharing counter?
-    'list' => ['facebook', 'twitter', 'google'],
+    'list' => ['facebook', 'twitter'],
     'style' => ['color'] // Modify the social sharing button(s) appearance
 ]
 ~~~
