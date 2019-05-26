@@ -3,7 +3,7 @@ title: Share
 description: Social sharing buttons.
 author: Taufik Nurrohman
 type: Markdown
-version: 2.1.0
+version: 2.1.1
 
 lot:
   extend:
@@ -14,8 +14,8 @@ lot:
 
 Add this snippet to the `page.php` file, usually just before the `</article>` tag:
 
-~~~ .php
-<p><?php static::share(); ?></p>
+~~~ .html
+<p><?php static::share(['facebook', 'twitter']); ?></p>
 ~~~
 
 Open `.\lot\extend\plugin\lot\share\lot\state\config.php` to configure:
@@ -23,7 +23,7 @@ Open `.\lot\extend\plugin\lot\share\lot\state\config.php` to configure:
 ~~~ .php
 [
     'counter' => true, // Enable sharing counter?
-    'list' => ['facebook', 'twitter'],
+    'active' => [ … ],
     'style' => ['color'] // Modify the social sharing button(s) appearance
 ]
 ~~~

@@ -4,101 +4,109 @@
   margin: -1px;
 }
 .share a {
+  display: flex;
+  align-items: center;
   margin: 1px;
+  background: rgba(148, 148, 148, .05);
   border: 1px solid;
   font: inherit;
   font-weight: normal;
   font-style: normal;
   line-height: 1.5;
-  color: inherit;
+  color: inherit !important;
   text-align: center;
   text-decoration: none;
   text-shadow: none;
-  padding: .25em .75em;
+  padding: .25em .5em;
   position: relative;
 }
-.share a span,
-.share a svg {
+.share output,
+.share span,
+.share svg {
   display: inline-block;
-  vertical-align: middle;
-}
-.share span b {
-  font: inherit;
-  font-weight: bold;
+  vertical-align: top;
 }
 .share svg {
   width: 1.25em;
   height: 1.25em;
+  margin-right: .25em;
   margin-left: -.25em;
   fill: currentColor;
+}
+.share output {
+  font: inherit;
+  font-weight: bold;
+  margin-left: .25em;
 }
 
 /* @color */
 .share-color a {
-  background: #000;
+  background: #000 none repeat;
+  color: #fff !important;
   line-height: 1;
-  border-color: transparent;
-}
-.share-color a,
-.share-color a:focus,
-.share-color a:hover,
-.share-color a:active {
-  color: #fff;
+  border-width: 0;
 }
 .share-color .to\:e-mail {
-  background: #777;
+  background-color: #777;
 }
 .share-color .to\:facebook {
-  background: #3b5998;
+  background-color: #3b5998;
 }
 .share-color .to\:linked-in {
-  background: #0077b5;
+  background-color: #0077b5;
 }
 .share-color .to\:pinterest {
-  background: #bd081c;
+  background-color: #bd081c;
 }
 .share-color .to\:reddit {
-  background: #3a80c1;
+  background-color: #3a80c1;
 }
 .share-color .to\:telegram {
-  background: #54a9eb;
+  background-color: #54a9eb;
 }
 .share-color .to\:tumblr {
-  background: #35465c;
+  background-color: #35465c;
 }
 .share-color .to\:twitter {
-  background: #55acee;
+  background-color: #55acee;
 }
 .share-color .to\:v-k {
-  background: #507299;
+  background-color: #507299;
 }
 .share-color .to\:whats-app {
-  background: #25d366;
+  background-color: #25d366;
 }
 .share-color .to\:x-i-n-g {
-  background: #1a7576;
+  background-color: #1a7576;
 }
 
 /* @icon */
-.share-icon a span {
+.share-icon {
+  margin: -.25em;
+}
+.share-icon a {
+  margin: .25em;
+}
+.share-icon span {
   position: absolute;
   bottom: 100%;
   left: 0;
   z-index: 9999;
   background: #000;
+  color: #fff;
   border: 0 solid #000;
   border-radius: .25em;
-  padding: .5em 1em;
+  padding: .25em .5em;
   white-space: nowrap;
   visibility: hidden;
   opacity: 0;
   transition: all .5s ease-out;
 }
-.share-icon a span::before {
+.share-icon span::before {
   content: "";
   position: absolute;
   top: 100%;
-  left: 1em;
+  left: .925em;
   width: 0;
   height: 0;
   border: .25em solid transparent;
@@ -106,8 +114,9 @@
 }
 .share-icon a {
   padding: .5em;
+  line-height: 1;
 }
-.share-icon a svg {
+.share-icon svg {
   margin: 0;
 }
 .share-icon a:focus span,
@@ -116,6 +125,27 @@
   margin-bottom: 1em;
   visibility: visible;
   opacity: 1;
+}
+
+/* @3d */
+.share-3d a {
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .25));
+  border-radius: 2px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .125), 0 1px 2px rgba(0, 0, 0, .4);
+}
+.share-3d a:focus,
+.share-3d a:active {
+  background-image: linear-gradient(rgba(0, 0, 0, .125), rgba(0, 0, 0, 0));
+}
+.share-3d span {
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, .125);
+}
+.share-3d svg {
+  filter: drop-shadow(0 -1px 0 rgba(0, 0, 0, .125));
+}
+.share-3d.share-icon span {
+  text-shadow: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .5);
 }
 
 /* @round */
