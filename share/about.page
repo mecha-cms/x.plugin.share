@@ -3,7 +3,7 @@ title: Share
 description: Social sharing buttons.
 author: Taufik Nurrohman
 type: Markdown
-version: 2.1.1
+version: 2.1.2
 
 lot:
   extend:
@@ -32,6 +32,7 @@ Open `.\lot\extend\plugin\lot\share\lot\state\config.php` to configure:
 
 Modifier for the `style` property:
 
+ - `3d`
  - `color`
  - `icon`
  - `round`

@@ -2,7 +2,7 @@
 
 Language::set([
     'do-share' => 'Share',
-    'do-share-e-mail' => 'E-Mail this!',
+    'do-share-e-mail' => 'Mail this!',
     'do-share-facebook' => 'Share this to Facebook!',
     'do-share-linked-in' => 'Share this to Linked-In!',
     'do-share-pinterest' => 'Pin this!',

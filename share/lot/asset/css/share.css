@@ -1,5 +1,5 @@
 .share {
-  display: flex;
+  display: inline-flex;
   flex-wrap: wrap;
   margin: -1px;
 }
@@ -47,7 +47,7 @@
   border-width: 0;
 }
 .share-color .to\:e-mail {
-  background-color: #777;
+  background-color: #555;
 }
 .share-color .to\:facebook {
   background-color: #3b5998;
