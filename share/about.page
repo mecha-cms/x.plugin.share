@@ -3,10 +3,10 @@ title: Share
 description: Social sharing buttons.
 author: Taufik Nurrohman
 type: Markdown
-version: 2.1.2
+version: 2.1.3
 
 lot:
-  extend:
+  x:
     asset: 1
     page: 1
     shield: 1
